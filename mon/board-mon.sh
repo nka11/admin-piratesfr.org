@@ -3,7 +3,7 @@
 # (C) 2011 LinuxFr.org
 # Board monitoring script.
 
-pidfile="/data/prod/linuxfr/board/board.pid"
+pidfile="/data/prod/piratesfr/board/board.pid"
 
 if [ ! -f $pidfile ]; then
   echo "board-mon: error, pidfile $pidfile not present."

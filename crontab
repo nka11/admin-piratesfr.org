@@ -1,21 +1,21 @@
-Crontab de linuxfr :
+Crontab de piratesfr :
 
 SHELL=/bin/bash
 
 # Maintenance une fois par jour : votes, karmas, tribunes, sitemap, etc.
-1 0 * * *          bundle exec rake -s linuxfr:daily
+1 0 * * *          bundle exec rake -s piratesfr:daily
 
 
 Crontab de root :
 
 SHELL=/bin/bash
-SCRIPTS_DIR=/etc/linuxfr
+SCRIPTS_DIR=/etc/piratesfr
 
 # traitement des logs et sauvegarde journalière
-15 3     * * *     cd ${SCRIPTS_DIR} && ./backup-linuxfr-daily.sh
+15 3     * * *     cd ${SCRIPTS_DIR} && ./backup-piratesfr-daily.sh
 
 # sauvegarde hebdo
-15 5     * * 0     cd ${SCRIPTS_DIR} && ./backup-linuxfr-weekly.sh
+15 5     * * 0     cd ${SCRIPTS_DIR} && ./backup-piratesfr-weekly.sh
 
 # courbes RRD surveillance serveur
 0-59/1 * * * *     cd ${SCRIPTS_DIR} && ./rrd/makestats.sh &>/dev/null

@@ -8,6 +8,6 @@
 	create 640 root adm
 	sharedscripts
 	postrotate
-		[ ! -f /var/run/nginx.pid ] || kill -USR1 `cat /var/run/nginx.pid` ; /etc/linuxfr/postrotate-nginx
+		[ ! -f /var/run/nginx.pid ] || kill -USR1 `cat /var/run/nginx.pid` ; /etc/piratesfr/postrotate-nginx
 	endscript
 }

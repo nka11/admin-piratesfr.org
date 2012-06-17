@@ -3,7 +3,7 @@
 # (C) 2011 LinuxFr.org
 # Share monitoring script.
 
-pidfile="/data/prod/linuxfr/share/share-linuxfr.pid"
+pidfile="/data/prod/piratesfr/share/share-piratesfr.pid"
 
 if [ ! -f $pidfile ]; then
   echo "share-mon: error, pidfile $pidfile not present."
