@@ -1,20 +1,20 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:          share-linuxfr
+# Provides:          share-piratesfr
 # Required-Start:    $local_fs $remote_fs $network $nginx
 # Required-Stop:     $local_fs $remote_fs $network $nginx
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: starts the share-linuxfr daemon
+# Short-Description: starts the share-piratesfr daemon
 ### END INIT INFO
 #
 # Install with: update-rc.d share defaults 99
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-USER=linuxfr
+USER=piratesfr
 CONTAINER=prod
 HOME=/data/$CONTAINER/$USER
-PIDFILE=$HOME/share/share-linuxfr.pid
+PIDFILE=$HOME/share/share-piratesfr.pid
 
 as_user() {
   if [ "xroot" != "x`whoami`" ]
@@ -28,7 +28,7 @@ as_user() {
 case "$1" in
   start)
     echo "Starting share for user '$USER'"
-    as_user $USER "source ~/ruby-env; cd $HOME/share; share-linuxfr share.yml"
+    as_user $USER "source ~/ruby-env; cd $HOME/share; share-piratesfr share.yml"
     echo "."
     ;;
 
@@ -43,7 +43,7 @@ case "$1" in
     kill -QUIT `cat $PIDFILE`
     sleep 2
     rm -f $PIDFILE
-    as_user $USER "source ~/ruby-env; cd $HOME/share; share-linuxfr share.yml"
+    as_user $USER "source ~/ruby-env; cd $HOME/share; share-piratesfr share.yml"
     echo "."
     ;;
 

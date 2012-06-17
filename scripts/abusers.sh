@@ -6,7 +6,7 @@ now=$(date +%s)
 IPS_FILE="ips.txt"
 IPDATES_FILE="ipdates.txt"
 IPDATES_FILE_TMP="ipdates.txt.tmp"
-IPDATES_TEMPLATE="${LINUXFR_DIR}/${USERNAME}/production/current/tmp/abusers.txt"
+IPDATES_TEMPLATE="${PIRATESFR_DIR}/${USERNAME}/production/current/tmp/abusers.txt"
 LOGS_FILE="${WEBLOGS_DIR}/${USERNAME}/access.log"
 
 update_ipdates_file() {

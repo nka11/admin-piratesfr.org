@@ -2,7 +2,7 @@
 
 # Pass nginx yesterday's logs to webalizer and then compress them
 
-. "/etc/linuxfr/conf.sh"
+. "/etc/piratesfr/conf.sh"
 LOG_DATE=$(date +'%Y/%m/%d' -d 'yesterday')
 
 # run the daily stats, and shut down some useless warnings

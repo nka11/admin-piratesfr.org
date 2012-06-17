@@ -7,7 +7,7 @@ GPG_LUKHAS="--encrypt-key 12A22DAB"
 GPG_NONO="--encrypt-key CE5B6885"
 GPG_KEYS="${GPG_RUFFY} ${GPG_NONO} ${GPG_LUKHAS}"
 
-BACKUP_ZONE="scp://backupgruik@zobe.linuxfr.org//data/backup/gruik_duplicity"
+BACKUP_ZONE="scp://backupgruik@zobe.piratesfr.org//data/backup/gruik_duplicity"
 BACKUP_LOG="/var/log/backup_gruik.log"
 
 touch ${BACKUP_LOG}
@@ -21,6 +21,6 @@ PASSPHRASE=  duplicity ${GPG_KEYS} --exclude /proc --exclude /dev --exclude /sys
 #--exclude=/proc --exclude=/dev --exclude=/sys \
 #--exclude=/var/lib/vservers/*/dev --exclude=/var/lib/vservers/*/proc \
 #--exclude=/var/lib/vservers/*/var/cache/apt/archives \
-#--exclude=/data/web/linuxfr.org/htdocs/templeet/cache \
-#--exclude=/data/web/linuxfr.org/htdocs/template/rdf \
-#/ root@zobe.linuxfr.org:/data/backup/gruik > /var/log/backup_gruik.log
+#--exclude=/data/web/piratesfr.org/htdocs/templeet/cache \
+#--exclude=/data/web/piratesfr.org/htdocs/template/rdf \
+#/ root@zobe.piratesfr.org:/data/backup/gruik > /var/log/backup_gruik.log

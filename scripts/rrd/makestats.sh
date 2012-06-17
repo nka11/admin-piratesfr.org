@@ -7,7 +7,7 @@ DATE="$(date +%Y/%m/%d)"
 rrdtool update ${SCRIPTS_DIR}/rrd/loadavg.rrd `awk '{printf "N:%s:%s:%s",$1,$2,$3}' /proc/loadavg` 
 
 rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load.png \
-	--title="Charge serveur quotidienne / LinuxFr.org (${DATE})" \
+	--title="Charge serveur quotidienne / PiratesFr.org (${DATE})" \
 	DEF:avg1=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg1:AVERAGE \
 	DEF:avg5=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg5:AVERAGE \
 	DEF:avg15=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg15:AVERAGE \
@@ -19,7 +19,7 @@ rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load.png \
 	GPRINT:avg1:LAST:"Last\: %lf%s" > /dev/null
 
 rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-week.png \
-	--start -604800 --title="Charge serveur hebdomadaire / LinuxFr.org (${DATE})" \
+	--start -604800 --title="Charge serveur hebdomadaire / PiratesFr.org (${DATE})" \
 	DEF:avg1=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg1:AVERAGE \
 	DEF:avg5=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg5:AVERAGE \
 	DEF:avg15=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg15:AVERAGE \
@@ -31,7 +31,7 @@ rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-week.png \
 	GPRINT:avg1:LAST:"Last\: %lf%s" > /dev/null
 
 rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-month.png \
-	--start -2678400 --title="Charge serveur mensuelle / LinuxFr.org (${DATE})" \
+	--start -2678400 --title="Charge serveur mensuelle / PiratesFr.org (${DATE})" \
 	DEF:avg1=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg1:AVERAGE \
 	DEF:avg5=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg5:AVERAGE \
 	DEF:avg15=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg15:AVERAGE \
@@ -43,7 +43,7 @@ rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-month.png \
 	GPRINT:avg1:LAST:"Last\: %lf%s" > /dev/null
 
 rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-yearly.png \
-	--start -32140800 --title="Charge serveur annuelle / LinuxFr.org (${DATE})" -u 5  -r \
+	--start -32140800 --title="Charge serveur annuelle / PiratesFr.org (${DATE})" -u 5  -r \
 	DEF:avg1=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg1:AVERAGE \
 	DEF:avg5=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg5:AVERAGE \
 	DEF:avg15=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg15:AVERAGE \
@@ -55,7 +55,7 @@ rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-yearly.png \
 	GPRINT:avg1:LAST:"Last\: %lf%s" > /dev/null
 
 rrdtool graph -w 800 -h 260 -a PNG ${GRAPHS_DIR}/load-semestre.png \
-	--start -16070400 --title="Charge serveur semestrielle / LinuxFr.org (${DATE})" \
+	--start -16070400 --title="Charge serveur semestrielle / PiratesFr.org (${DATE})" \
 	DEF:avg1=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg1:AVERAGE \
 	DEF:avg5=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg5:AVERAGE \
 	DEF:avg15=${SCRIPTS_DIR}/rrd/loadavg.rrd:avg15:AVERAGE \
@@ -71,7 +71,7 @@ rrdtool update ${SCRIPTS_DIR}/rrd/network-eth2.rrd `sed '/eth0/!d;s%eth0:%%' /pr
 
 # Daily Graph
 rrdtool graph ${GRAPHS_DIR}/network-eth2-day.png --start -86400 \
-	--title="Stats reseau LinuxFr.org (${DATE})" -v "bits" -a PNG -u=512000 \
+	--title="Stats reseau PiratesFr.org (${DATE})" -v "bits" -a PNG -u=512000 \
 	DEF:inoctets=${SCRIPTS_DIR}/rrd/network-eth2.rrd:input:AVERAGE \
 	DEF:outoctets=${SCRIPTS_DIR}/rrd/network-eth2.rrd:output:AVERAGE \
 	CDEF:a=inoctets,8,* \
@@ -97,7 +97,7 @@ rrdtool update ${SCRIPTS_DIR}/rrd/meminfo.rrd `free -m|sed '/^Mem:/!d;s%Mem:%%'|
 
 # Daily Graph
 rrdtool graph ${GRAPHS_DIR}/meminfo.png --start -86400 \
-	--title="Stats memoire LinuxFr.org (${DATE})" -v "MiB" -a PNG  \
+	--title="Stats memoire PiratesFr.org (${DATE})" -v "MiB" -a PNG  \
 	DEF:used=${SCRIPTS_DIR}/rrd/meminfo.rrd:used:AVERAGE \
 	DEF:free=${SCRIPTS_DIR}/rrd/meminfo.rrd:free:AVERAGE \
 	DEF:shared=${SCRIPTS_DIR}/rrd/meminfo.rrd:shared:AVERAGE \
