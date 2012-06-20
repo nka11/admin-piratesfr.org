@@ -11,12 +11,12 @@
 # Install with: update-rc.d board defaults 99
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-USER=linuxfr
+USER=piratesfr
 CONTAINER=prod
 HOME=/data/$CONTAINER/$USER
 BDIR=$HOME/board
 PIDFILE=$BDIR/board.pid
-DAEMON=board-linuxfr
+DAEMON=board-piratesfr
 ARGS="-d -v -S $BDIR/board.sock -l $BDIR/board.log -P $PIDFILE"
 
 as_user() {
